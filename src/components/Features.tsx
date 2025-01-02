@@ -6,8 +6,18 @@ interface Feature {
 }
 function FeatureCard({ feature }: { feature: Feature }) {
   return (
-    <div className="bg-[#F0F9F7] rounded-lg shadow-sm h-[320px] w-[300px]">
-      <h1>{feature.title}</h1>
+    <div className="rounded-lg h-[320px] md:w-[300px] relative shadow-lg bg-[#F0F9F7] cursor-pointer group mt-4 md:mt-0">
+      <img
+        src={feature.icon}
+        className="w-14 h-14 group-hover:w-16 group-hover:h-16 absolute top-[-24px] right-[40%] transition-all duration-150 ease-in opacity-70 group-hover:opacity-100"
+      />
+      <h1 className="font-bold font-titles text-lg group-hover:text-xl text-center mt-16 transition-all duration-500 ease-in opacity-70 group-hover:opacity-100">
+        {feature.title}
+      </h1>
+      <p className="font-titles text-sm leading-relaxed opacity-80 group-hover:opacity-100 my-2 p-2">
+        {feature.description}
+      </p>
+      <div className="h-[320px] md:w-[300px] w-full z-[-1] left-[-10px] top-[10px] bg-gradient-to-b to-[#7FC786] from-[#89D3DC] opacity-0 absolute rounded-lg group-hover:opacity-100 ease-in-out duration-150 transition-all"></div>
     </div>
   );
 }
@@ -46,7 +56,7 @@ function Features() {
           Experience the future of efficient, secure, and scalable financial
           collaboration.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 mb-8">
           {features.map((feature) => (
             <FeatureCard key={feature.id} feature={feature} />
           ))}
