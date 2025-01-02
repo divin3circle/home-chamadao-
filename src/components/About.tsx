@@ -1,4 +1,4 @@
-function WhyApp() {
+function About() {
   const workingList = [
     {
       title: "Create or Join a Chama",
@@ -64,4 +64,4 @@ function WhyApp() {
   );
 }
 
-export default WhyApp;
+export default About;
