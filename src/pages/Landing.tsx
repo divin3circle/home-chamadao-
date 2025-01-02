@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
+import WhyApp from "../components/WhyApp";
 
 function Landing() {
   return (
@@ -11,6 +12,7 @@ function Landing() {
         <Hero />
       </section>
       <img src="/corner.png" alt="Corner" className="absolute top-0 right-0" />
+      <WhyApp />
     </div>
   );
 }
