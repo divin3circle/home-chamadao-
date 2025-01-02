@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
+import Features from "../components/Features";
 
 function Landing() {
   return (
@@ -13,6 +14,7 @@ function Landing() {
       </section>
       <img src="/corner.png" alt="Corner" className="absolute top-0 right-0" />
       <About />
+      <Features />
     </div>
   );
 }
