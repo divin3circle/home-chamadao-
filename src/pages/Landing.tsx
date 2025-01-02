@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Features from "../components/Features";
+import CTA from "../components/CTA";
 
 function Landing() {
   return (
@@ -15,6 +16,7 @@ function Landing() {
       <img src="/corner.png" alt="Corner" className="absolute top-0 right-0" />
       <About />
       <Features />
+      <CTA />
     </div>
   );
 }

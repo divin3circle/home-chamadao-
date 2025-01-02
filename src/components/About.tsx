@@ -32,7 +32,7 @@ function About() {
           <div className="bg-[#FAE8B6] md:w-[350px] w-full h-[400px] absolute rounded-[24px] transform rotate-[6.9deg] top-10 left-0 bottom-0"></div>
         </div>
         <div className="flex flex-col flex-1">
-          <h1 className="text-white font-body bg-[#363636] p-1 text-4xl lg:text-5xl w-full lg:w-[500px] md:w-[400px] mt-4 md:my-2 md:mt-0 font-bold">
+          <h1 className="text-white font-body bg-[#363636] p-1 text-4xl lg:text-5xl w-[24rem] lg:w-[500px] md:w-[400px] mt-8 md:my-2 md:mt-0 font-bold">
             What is ChamaDAO?
           </h1>
           <p className="text-black font-titles p-1 text-sm font-light mt-2 md:mt-0">

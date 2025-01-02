@@ -6,7 +6,7 @@ interface Feature {
 }
 function FeatureCard({ feature }: { feature: Feature }) {
   return (
-    <div className="rounded-lg h-[320px] md:w-[300px] relative shadow-lg bg-[#F0F9F7] cursor-pointer group mt-4 md:mt-0">
+    <div className="rounded-lg h-[320px] md:w-[300px] relative shadow-lg bg-[#F0F9F7] cursor-pointer group mt-4">
       <img
         src={feature.icon}
         className="w-14 h-14 group-hover:w-16 group-hover:h-16 absolute top-[-24px] right-[40%] transition-all duration-150 ease-in opacity-70 group-hover:opacity-100"
@@ -48,7 +48,7 @@ function Features() {
   return (
     <div className="mt-12 lg:max-w-[1040px] w-full mx-auto my-0">
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-white text-center font-body bg-[#363636] p-1 text-4xl lg:text-5xl w-full lg:w-[500px] md:w-[400px] mt-4 md:my-2 md:mt-0 font-bold">
+        <h1 className="text-white text-center font-body bg-[#363636] p-1 text-4xl lg:text-5xl w-74 lg:w-[500px] md:w-[400px] mt-4 md:my-2 md:mt-0 font-bold">
           Why ChamaDAO?
         </h1>
         <p className="text-black text-center font-titles p-1 text-lg font-light mt-2 md:mt-4">
