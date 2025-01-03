@@ -78,7 +78,7 @@ function Navbar() {
         </ul>
         <div className="flex items-center justify-center my-8">
           <button className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4">
-            Sign Up
+            Download App
           </button>
         </div>
       </div>

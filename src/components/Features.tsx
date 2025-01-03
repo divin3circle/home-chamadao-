@@ -35,7 +35,7 @@ function Features() {
       title: "Secure and Transparent",
       icon: "/public/scalable.svg",
       description:
-        "Powered by blockchain, your contributions and transactions are safe and visible to all chama members.",
+        "Thanks to the immutability of blockchain systems, onchain chama activities are visible to all the members of the chama and a finacial report can be easily generated from the existing immutable onchain data.",
     },
     {
       id: 3,
@@ -56,7 +56,7 @@ function Features() {
           Experience the future of efficient, secure, and scalable financial
           collaboration.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 mb-8 px-4 md:px-0">
           {features.map((feature) => (
             <FeatureCard key={feature.id} feature={feature} />
           ))}

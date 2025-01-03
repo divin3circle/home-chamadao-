@@ -32,7 +32,7 @@ function CTA() {
           <p className="font-bold text-sm font-titles px-2">+10K Members</p>
         </div>
         <button className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 mt-4">
-          Sign Up
+          Get Early Access
         </button>
       </div>
       <img src="/cta.svg" alt="Hero" className="h-full md:w-1/2 w-full" />

@@ -1,7 +1,11 @@
-function Hero() {
+function Hero({
+  setJoinModal,
+}: {
+  setJoinModal: (joinModal: boolean) => void;
+}) {
   return (
     <div className="mx-auto my-0 to-[#89D3DC] from-[#7FC786] bg-gradient-to-b lg:h-[100dvh] md:h-[85dvh] lg:max-w-[1040px] rounded-b-[63px] flex flex-col justify-center">
-      <div className="flex flex-col md:flex-row items-center lg:gap-4 md:gap-1">
+      <div className="flex flex-col md:flex-row items-center lg:gap-4 md:gap-1 md:-mb-20">
         <div className="lg:mx-8 md:mx-1 pt-32 lg:pt-0 mb-4 md:mb-0">
           <h1 className="text-white font-body bg-[#363636] p-1 text-4xl md:text-5xl lg:text-6xl w-full lg:w-[500px] md:w-[400px] my-2 font-bold">
             A borderless and
@@ -30,8 +34,11 @@ function Hero() {
         decentralized platform inspired by Kenya’s trusted chamas.
       </p>
       <div className="flex justify-center md:justify-start items-center md:items-start mt-4">
-        <button className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mx-8 mt-4 w-[162px] mb-4 md:mb-0">
-          Sign Up
+        <button
+          className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mx-8 mt-4 w-[162px] mb-4 md:mb-0"
+          onClick={() => setJoinModal(true)}
+        >
+          Download App
         </button>
       </div>
     </div>

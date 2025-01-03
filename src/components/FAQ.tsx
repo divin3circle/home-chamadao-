@@ -21,7 +21,7 @@ function FAOCard({ faq }: { faq: TFAQ }) {
         </h1>
       </div>
       {isOpen && (
-        <div className="flex gap-4 flex-row items-center -ml-2">
+        <div className="flex gap-4 flex-row items-center -ml-1">
           <IconMinusVertical size={36} color="#B1B1B1" />
           <p className="text-sm md:text-base font-titles leading-relaxed mt-2">
             {faq.description}
