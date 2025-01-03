@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Features from "../components/Features";
 import CTA from "../components/CTA";
+import FAQ from "../components/FAQ";
 
 function Landing() {
   return (
@@ -17,6 +18,7 @@ function Landing() {
       <About />
       <Features />
       <CTA />
+      <FAQ />
     </div>
   );
 }

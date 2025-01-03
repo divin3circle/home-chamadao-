@@ -35,7 +35,6 @@ function CTA() {
           Sign Up
         </button>
       </div>
-
       <img src="/cta.svg" alt="Hero" className="h-full md:w-1/2 w-full" />
     </div>
   );
