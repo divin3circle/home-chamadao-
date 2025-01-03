@@ -19,6 +19,7 @@ function Landing() {
       <Features />
       <CTA />
       <FAQ />
+      <Landing />
     </div>
   );
 }
