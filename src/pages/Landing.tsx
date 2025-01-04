@@ -5,6 +5,8 @@ import Features from "../components/Features";
 import CTA from "../components/CTA";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
+import JoinModal from "../components/JoinModal";
+import InvestModal from "../components/InvestModal";
 
 function Landing() {
   return (
@@ -16,11 +18,15 @@ function Landing() {
         <Hero />
       </section>
       <img src="/corner.png" alt="Corner" className="absolute top-0 right-0" />
-      <About />
+      <section id="about">
+        <About />
+      </section>
       <Features />
       <CTA />
       <FAQ />
       <Footer />
+      <JoinModal />
+      <InvestModal />
     </div>
   );
 }

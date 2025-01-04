@@ -4,6 +4,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandX,
+  IconChecklist,
 } from "@tabler/icons-react";
 
 function Footer() {
@@ -71,6 +72,12 @@ function Footer() {
           <IconBookFilled size={20} color="#7FC786" />
           <p className="text-white text-sm font-titles my-2 group-hover:underline ease-in duration-150 group-hover:text-[#7FC786] transition-all">
             Read our Blogs
+          </p>
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer group">
+          <IconChecklist size={20} color="#7FC786" />
+          <p className="text-white text-sm font-titles my-2 group-hover:underline ease-in duration-150 group-hover:text-[#7FC786] transition-all">
+            Terms and Conditions
           </p>
         </div>
       </div>

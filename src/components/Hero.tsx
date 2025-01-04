@@ -1,3 +1,4 @@
+import { openModal } from "../../utils/modalFunctions";
 function Hero() {
   return (
     <div className="mx-auto my-0 to-[#89D3DC] from-[#7FC786] bg-gradient-to-b lg:h-[100dvh] md:h-[85dvh] lg:max-w-[1040px] rounded-b-[63px] flex flex-col justify-center">
@@ -32,7 +33,7 @@ function Hero() {
       <div className="flex justify-center md:justify-start items-center md:items-start mt-4">
         <button
           className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mx-8 mt-4 w-[162px] mb-4 md:mb-0"
-          onClick={() => {}}
+          onClick={() => openModal("joinModal")}
         >
           Download App
         </button>

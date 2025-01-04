@@ -1,6 +1,7 @@
 import { IconMenuDeep, IconX } from "@tabler/icons-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { openModal } from "../../utils/modalFunctions";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,20 +18,29 @@ function Navbar() {
       </Link>
       <div className="items-center gap-2 hidden md:flex">
         <div>
-          <button className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4">
+          <a
+            href="#about"
+            className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
+          >
             About
-          </button>
+          </a>
           <Link
             to="/contact"
             className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
           >
             Contact Us
           </Link>
-          <button className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4">
+          <button
+            className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
+            onClick={() => openModal("investModal")}
+          >
             Invest
           </button>
         </div>
-        <button className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4">
+        <button
+          className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
+          onClick={() => openModal("joinModal")}
+        >
           Sign Up
         </button>
       </div>
@@ -79,12 +89,18 @@ function Navbar() {
           >
             Contact Us
           </Link>
-          <button className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer">
+          <button
+            className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
+            onClick={() => openModal("investModal")}
+          >
             Invest
           </button>
         </ul>
         <div className="flex items-center justify-center my-8">
-          <button className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4">
+          <button
+            className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
+            onClick={() => openModal("joinModal")}
+          >
             Download App
           </button>
         </div>
