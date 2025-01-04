@@ -1,5 +1,7 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import JoinModal from "../components/JoinModal";
+import InvestModal from "../components/InvestModal";
 
 function Contact() {
   return (
@@ -8,6 +10,8 @@ function Contact() {
         <Navbar />
       </div>
       <Footer />
+      <JoinModal />
+      <InvestModal />
     </div>
   );
 }
