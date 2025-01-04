@@ -80,9 +80,13 @@ function Navbar() {
           </div>
         </div>
         <ul className="flex flex-col h-full items-center gap-12 mt-20 font-titles">
-          <button className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer">
+          <a
+            href="#about"
+            onClick={() => setIsOpen(false)}
+            className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
+          >
             About
-          </button>
+          </a>
           <Link
             to="/contact"
             className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
