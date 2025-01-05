@@ -17,6 +17,8 @@ export const didYouKnowMessages: string[] = [
   "With ChamaDAO, you can create or join a digital chama in just a few clicks!",
   "ChamaDAO uses blockchain to give you complete control and transparency over your chama finances.",
 ];
+export const SHEETS_URL =
+  "https://script.google.com/macros/s/AKfycbwROOlbWLgPhRDmd2DMIVMo4r4OjWWob4zsGLEm76ZDRjFitX8As4KEdVVIju_34JjHrA/exec";
 
 export function getRandomDidYouKnow(): string {
   const randomIndex = Math.floor(Math.random() * didYouKnowMessages.length);
