@@ -71,7 +71,7 @@ function Form() {
             />
           </div>
           <div className="flex flex-col my-4">
-            <label className="font-titles font-bold text-sm">EMAIL</label>
+            <label className="font-titles font-bold text-sm">MESSAGE</label>
             <textarea
               placeholder="Tell us something"
               rows={5}

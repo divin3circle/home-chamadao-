@@ -21,11 +21,16 @@ function FAOCard({ faq }: { faq: TFAQ }) {
         </h1>
       </div>
       {isOpen && (
-        <div className="flex gap-4 flex-row items-center -ml-1">
-          <IconMinusVertical size={36} color="#B1B1B1" />
-          <p className="text-sm md:text-base font-titles leading-relaxed mt-2">
-            {faq.description}
-          </p>
+        <div>
+          <div className="flex gap-4 flex-row items-center -ml-1">
+            <IconMinusVertical size={36} color="#B1B1B1" />
+            <p className="text-sm md:text-base font-titles leading-relaxed mt-2">
+              {faq.description}
+            </p>
+          </div>
+          <a className="text-xs text-blue-700 underline font-titles font-semibold ml-4 mt-4 text-center">
+            Learn More
+          </a>
         </div>
       )}
     </div>
@@ -42,7 +47,7 @@ function FAQ() {
     {
       title: "How are loans secured?",
       description:
-        "Loans are given based to chama members on a reputation and gurrantor basis.",
+        "Loans given to chama members are based on a reputation and gurrantor basis.",
     },
     {
       title: "Do I need to be Kenya to use ChamaDAO?",

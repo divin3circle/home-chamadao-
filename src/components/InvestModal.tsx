@@ -1,9 +1,29 @@
+import { useState } from "react";
 import { closeModal } from "../../utils/modalFunctions";
 import { IconX } from "@tabler/icons-react";
 
+interface InvestorData {
+  name: string;
+  email: string;
+}
 function InvestModal() {
+  const [investorData, setInvestorData] = useState<InvestorData>({
+    name: "",
+    email: "",
+  });
+
   function handleInvest() {
-    closeModal("investModal");
+    if (investorData?.email !== "" && investorData?.name !== "") {
+      try {
+        console.log(investorData);
+        closeModal("investModal");
+      } catch (error) {
+        closeModal("investModal");
+        console.error(error);
+      }
+    } else {
+      console.log("Please fill in the form");
+    }
   }
   return (
     <dialog
@@ -36,6 +56,13 @@ function InvestModal() {
                 <input
                   placeholder="Enter your name here"
                   type="text"
+                  value={investorData.name}
+                  onChange={(e) =>
+                    setInvestorData({
+                      ...investorData,
+                      name: e.target.value,
+                    })
+                  }
                   className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] font-titles mt-2 focus:outline-none placeholder:text-gray-500"
                 />
               </div>
@@ -44,6 +71,13 @@ function InvestModal() {
                 <input
                   placeholder="Your Email address"
                   type="email"
+                  value={investorData.email}
+                  onChange={(e) =>
+                    setInvestorData({
+                      ...investorData,
+                      email: e.target.value,
+                    })
+                  }
                   className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] font-titles mt-2 focus:outline-none placeholder:text-gray-500"
                 />
               </div>
