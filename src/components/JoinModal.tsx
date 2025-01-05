@@ -56,10 +56,10 @@ function JoinModal() {
               </div>
               <div className="flex flex-col my-4">
                 <label className="font-titles font-bold text-sm">
-                  TELEGRAM
+                  TWITTER/X
                 </label>
                 <input
-                  placeholder="Your Telegram handle"
+                  placeholder="Your Twitter handle"
                   type="text"
                   className="text-sm font-semibold border-b-2 bg-transparent placeholder:text-gray-500 border-[#9E9E9E] font-titles mt-2 focus:outline-none"
                 />
