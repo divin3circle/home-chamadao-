@@ -26,7 +26,7 @@ function Hero() {
           <div className="bg-[#FAE8B6] md:w-[400px] w-full h-[420px] absolute rounded-[24px] transform rotate-[6.9deg] top-0 bottom-0"></div>
         </div>
       </div>
-      <p className="text-black font-titles p-1 text-sm md:w-[50%] mx-8 font-light mt-10 md:mt-0">
+      <p className="text-black font-titles p-1 text-sm md:w-[50%] mx-8 font-light mt-10 md:mt-20">
         Join the revolution in communal financial freedom with ChamaDAO — a
         decentralized platform inspired by Kenya’s trusted chamas.
       </p>
