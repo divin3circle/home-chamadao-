@@ -1,9 +1,55 @@
 import { IconX } from "@tabler/icons-react";
 import { closeModal } from "../../utils/modalFunctions";
+import { toast } from "react-toastify";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../utils/firebaseConfig";
+import { useState } from "react";
 
+interface UserData {
+  name: string;
+  email: string;
+  handle: string;
+}
 function JoinModal() {
-  function handleSignUp() {
-    closeModal("joinModal");
+  const [userData, setUserData] = useState<UserData>({
+    name: "",
+    email: "",
+    handle: "",
+  });
+  const [loading, setLoading] = useState<boolean>(false);
+  const userRef = collection(db, "early_access");
+  const [terms, setTerms] = useState<boolean>(true);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async function handleSignUp(e: any) {
+    if (userData?.email !== "" && userData?.name !== "") {
+      try {
+        setLoading(true);
+        e.preventDefault();
+        await addDoc(userRef, userData);
+        toast.success("Thank you for signing up");
+        closeModal("joinModal");
+        setLoading(false);
+        setUserData({
+          name: "",
+          email: "",
+          handle: "",
+        });
+      } catch (error) {
+        setLoading(false);
+        toast.error("Something went wrong, please try again");
+        console.error(error);
+      }
+    } else {
+      console.log("Please fill in the form");
+    }
+  }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen backdrop-blur-md">
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
   }
   return (
     <dialog
@@ -37,12 +83,19 @@ function JoinModal() {
                 FIRST TO EXPERIENCE CHAMADAO
               </h1>
             </div>
-            <div className="">
+            <form className="">
               <div className="flex flex-col my-4">
                 <label className="font-titles font-bold text-sm">NAME</label>
                 <input
                   placeholder="Enter your name here"
                   type="text"
+                  value={userData.name}
+                  onChange={(e) =>
+                    setUserData({
+                      ...userData,
+                      name: e.target.value,
+                    })
+                  }
                   className="text-sm font-semibold border-b-2 bg-transparent placeholder:text-gray-500 border-[#9E9E9E] font-titles mt-2 focus:outline-none"
                 />
               </div>
@@ -51,6 +104,13 @@ function JoinModal() {
                 <input
                   placeholder="Your Email address"
                   type="email"
+                  value={userData.email}
+                  onChange={(e) =>
+                    setUserData({
+                      ...userData,
+                      email: e.target.value,
+                    })
+                  }
                   className="text-sm font-semibold border-b-2 bg-transparent placeholder:text-gray-500 border-[#9E9E9E] font-titles mt-2 focus:outline-none"
                 />
               </div>
@@ -61,14 +121,23 @@ function JoinModal() {
                 <input
                   placeholder="Your Twitter handle"
                   type="text"
+                  value={userData.handle}
+                  onChange={(e) =>
+                    setUserData({
+                      ...userData,
+                      handle: e.target.value,
+                    })
+                  }
                   className="text-sm font-semibold border-b-2 bg-transparent placeholder:text-gray-500 border-[#9E9E9E] font-titles mt-2 focus:outline-none"
                 />
               </div>
-            </div>
+            </form>
             <div className="flex gap-1 items-center mt-2">
               <input
                 type="checkbox"
                 defaultChecked
+                checked={terms}
+                onChange={() => setTerms(!terms)}
                 className="checkbox checkbox-success text-[#7FC786]"
               />
               <h1 className="text-[0.5rem] font-titles font-bold text-gray-500">
@@ -79,8 +148,13 @@ function JoinModal() {
               </h1>
             </div>
             <button
-              className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 my-8"
+              className={`font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 my-8 ${
+                terms
+                  ? "bg-[#FCE9B6] text-[#000]"
+                  : "bg-[#9E9E9E] text-[#000] cursor-not-allowed"
+              }`}
               onClick={handleSignUp}
+              disabled={!terms}
             >
               Sign Up
             </button>

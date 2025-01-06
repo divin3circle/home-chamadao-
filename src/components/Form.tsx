@@ -1,8 +1,18 @@
+import { collection, addDoc } from "firebase/firestore";
+import { useState } from "react";
+import { db } from "../../utils/firebaseConfig";
+import { toast } from "react-toastify";
+
 type FormProps = {
   title: string;
   value: string;
   icon: string;
 };
+interface UserData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 function Card({ formItem }: { formItem: FormProps }) {
   return (
@@ -39,9 +49,45 @@ function Form() {
       icon: "/public/x.svg",
     },
   ];
-  const handleSubmit = () => {};
+  const [userData, setUserData] = useState<UserData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState<boolean>(false);
+  const userRef = collection(db, "users");
+
+  async function handleSubmit() {
+    if (userData) {
+      try {
+        setLoading(true);
+        console.log(userData);
+        await addDoc(userRef, userData);
+        toast.success("Thank you for sharing your message");
+        setLoading(false);
+        setUserData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } catch (error) {
+        setLoading(false);
+        toast.error("Something went wrong, please try again");
+        console.error(error);
+      }
+    } else {
+      console.log("Please fill in the form");
+    }
+  }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen backdrop-blur-md">
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
+  }
   return (
-    <div className="mt-20 max-w-[1040px] my-0 mx-auto flex flex-col items-center justify-center">
+    <div className="mt-20 max-w-[1040px] my-0 mx-auto flex flex-col items-center justify-center h-screen">
       <h1 className="text-white font-titles w-[11.5rem] bg-[#363636] p-1 text-3xl mt-8 font-bold">
         Contact Us
       </h1>
@@ -59,6 +105,10 @@ function Form() {
             <input
               placeholder="Enter your name here"
               type="text"
+              value={userData.name}
+              onChange={(e) =>
+                setUserData({ ...userData, name: e.target.value })
+              }
               className="text-sm font-semibold border-b-2 bg-transparent placeholder:text-gray-500 border-[#9E9E9E] font-titles mt-2 focus:outline-none"
             />
           </div>
@@ -67,6 +117,10 @@ function Form() {
             <input
               placeholder="Your Email address"
               type="email"
+              value={userData.email}
+              onChange={(e) =>
+                setUserData({ ...userData, email: e.target.value })
+              }
               className="text-sm font-semibold border-b-2 bg-transparent placeholder:text-gray-500 border-[#9E9E9E] font-titles mt-2 focus:outline-none"
             />
           </div>
@@ -75,12 +129,19 @@ function Form() {
             <textarea
               placeholder="Tell us something"
               rows={5}
+              value={userData.message}
+              onChange={(e) =>
+                setUserData({ ...userData, message: e.target.value })
+              }
               className="text-sm font-semibold border-b-2 bg-transparent placeholder:text-gray-500 border-[#9E9E9E] font-titles mt-2 focus:outline-none"
             />
           </div>
           <button
             className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
-            onClick={() => handleSubmit}
+            onClick={handleSubmit}
+            // disabled={
+            //   loading || !userData.message || !userData.name || !userData.email
+            // }
           >
             Submit
           </button>

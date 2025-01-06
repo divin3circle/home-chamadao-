@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { closeModal } from "../../utils/modalFunctions";
 import { IconX } from "@tabler/icons-react";
+import { toast } from "react-toastify";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../utils/firebaseConfig";
 
 interface InvestorData {
   name: string;
@@ -11,19 +14,38 @@ function InvestModal() {
     name: "",
     email: "",
   });
+  const [loading, setLoading] = useState<boolean>(false);
+  const investorsRef = collection(db, "investors");
 
-  function handleInvest() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async function handleInvest(e: any) {
     if (investorData?.email !== "" && investorData?.name !== "") {
       try {
-        console.log(investorData);
+        setLoading(true);
+        e.preventDefault();
+        await addDoc(investorsRef, investorData);
+        toast.success("Investment submitted successfully");
         closeModal("investModal");
+        setLoading(false);
+        setInvestorData({
+          name: "",
+          email: "",
+        });
       } catch (error) {
-        closeModal("investModal");
+        setLoading(false);
+        toast.error("Something went wrong, please try again");
         console.error(error);
       }
     } else {
       console.log("Please fill in the form");
     }
+  }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen backdrop-blur-md">
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
   }
   return (
     <dialog
@@ -50,7 +72,7 @@ function InvestModal() {
               </h1>
             </div>
 
-            <div className="">
+            <form className="">
               <div className="flex flex-col my-4">
                 <label className="font-titles font-bold text-sm">NAME</label>
                 <input
@@ -63,7 +85,7 @@ function InvestModal() {
                       name: e.target.value,
                     })
                   }
-                  className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] font-titles mt-2 focus:outline-none placeholder:text-gray-500"
+                  className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] font-titles mt-2 focus:outline-none text-gray-700 placeholder:text-gray-500"
                 />
               </div>
               <div className="flex flex-col mb-4 mt-6">
@@ -78,10 +100,10 @@ function InvestModal() {
                       email: e.target.value,
                     })
                   }
-                  className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] font-titles mt-2 focus:outline-none placeholder:text-gray-500"
+                  className="text-sm font-semibold border-b-2 bg-transparent border-[#9E9E9E] text-gray-700 font-titles mt-2 focus:outline-none placeholder:text-gray-500"
                 />
               </div>
-            </div>
+            </form>
             <div className="flex gap-1 items-center mt-2">
               <input
                 type="checkbox"
