@@ -61,7 +61,7 @@ function InvestModal() {
             <IconX
               size={24}
               className="absolute top-5 right-5 cursor-pointer"
-              onClick={handleInvest}
+              onClick={() => closeModal("investModal")}
             />
             <div className="px-4">
               <h1 className="text-white font-titles w-[11rem] bg-[#363636] p-1 text-3xl mt-8 font-bold">

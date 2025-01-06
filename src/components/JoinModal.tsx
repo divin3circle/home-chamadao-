@@ -73,7 +73,7 @@ function JoinModal() {
             <IconX
               size={24}
               className="absolute top-5 right-5 cursor-pointer"
-              onClick={handleSignUp}
+              onClick={() => closeModal("joinModal")}
             />
             <div className="md:mt-16 mt-12">
               <h1 className="font-titles md:text-lg font-extrabold">
