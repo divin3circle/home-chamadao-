@@ -8,10 +8,10 @@ function CTA() {
   return (
     <div className="flex md:flex-row flex-col items-center justify-between max-w-[1040px] my-0 mx-auto rounded-3xl bg-gradient-to-l to-[#89D3DC] from-[#7FC786] mt-8">
       <div className="px-4 my-8 flex-1 md:w-1/2 w-full">
-        <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl w-72 mt-4 md:my-2 md:mt-0 font-bold">
+        <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl inline mt-4 md:my-2 md:mt-0 font-bold">
           Join ChamaDAO
         </h1>
-        <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl w-28 mt-1 md:my-2 md:mt-1 font-bold">
+        <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl inline mt-1 md:my-2 md:mt-1 font-bold">
           Today
         </h1>
         <p className="font-titles text-base w-3/4 my-4">

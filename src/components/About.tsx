@@ -31,7 +31,7 @@ function About() {
           />
         </div>
         <div className="flex flex-col flex-1">
-          <h1 className="text-white font-body bg-[#363636] p-1 text-4xl lg:text-5xl w-[24rem] lg:w-[500px] md:w-[400px] mt-8 md:my-2 md:mt-0 font-bold">
+          <h1 className="text-white font-body bg-[#363636] text-4xl lg:text-5xl inline-block mt-8 md:mt-0 font-bold">
             What is ChamaDAO?
           </h1>
           <p className="text-black font-titles p-1 text-sm font-light mt-2 md:mt-0">
