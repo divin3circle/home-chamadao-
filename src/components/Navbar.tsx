@@ -30,12 +30,12 @@ function Navbar() {
           >
             Contact Us
           </Link>
-          <button
+          <Link
+            to="/invest"
             className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
-            onClick={() => openModal("investModal")}
           >
             Invest
-          </button>
+          </Link>
         </div>
         <button
           className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
@@ -93,12 +93,18 @@ function Navbar() {
           >
             Contact Us
           </Link>
-          <button
+          <Link
+            to="/contact"
             className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
-            onClick={() => openModal("investModal")}
+          >
+            Contact Us
+          </Link>
+          <Link
+            className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
+            to="/invest"
           >
             Invest
-          </button>
+          </Link>
         </ul>
         <div className="flex items-center justify-center my-8">
           <button
