@@ -21,7 +21,7 @@ function Hero() {
           <img
             src="/hero.svg"
             alt="Hero"
-            className="h-[400px] md:w-[400px] w-auto relative z-[1]"
+            className="h-[400px] md:w-[400px] w-auto"
           />
         </div>
       </div>

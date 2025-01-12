@@ -55,7 +55,7 @@ function Invest() {
       <div className="absolute top-0 left-0 right-0 z-10 flex justify-center items-center">
         <Navbar />
       </div>
-      <section className="pb-32 max-w-[1240px] mx-auto my-0">
+      <section className="pb-32 max-w-[1140px] mx-auto my-0">
         <div className="modal-box flex flex-col md:flex-row md:gap-4 w-full md:w-[80%] mx-auto my-0 mb-14 mt-32">
           <div className="flex flex-col flex-3 items-center justify-center md:w-[40%] bg-gradient-to-b from-[#89D3DC] to-[#7FC786]">
             <img

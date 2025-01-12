@@ -18,6 +18,8 @@ function Navbar() {
       </Link>
       <div className="items-center gap-2 hidden md:flex">
         <div>
+          {/* //TO-DO 
+          //Disable About tag when not in home route */}
           <a
             href="#about"
             className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"

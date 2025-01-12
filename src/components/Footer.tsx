@@ -9,7 +9,7 @@ import {
 
 function Footer() {
   return (
-    <div className="md:h-[300px] h-[350px] pt-12 bg-gradient-to-b from-[#404040] to-[#1A1A1A] md:pt-8 ">
+    <div className="md:h-[300px] h-[350px] pt-12 bg-gradient-to-b from-[#404040] to-[#1A1A1A] md:pt-12 ">
       <div className="max-w-[1090px] my-0 mx-auto grid grid-cols-2 md:grid-cols-4 content-center px-2 gap-2">
         <div className="flex flex-col">
           <div className="flex items-center">

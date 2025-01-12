@@ -21,7 +21,7 @@ function About() {
     },
   ];
   return (
-    <div className="lg:max-w-[1040px] w-full mx-auto my-0 px-2">
+    <div className="lg:max-w-[1040px] w-full mx-auto my-0 px-2 pt-8">
       <div className="flex flex-col md:flex-row md:justify-between justify-center mt-16">
         <div className="flex justify-center items-center relative flex-1 mb-8 md:mb-0">
           <img
