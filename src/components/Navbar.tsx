@@ -7,7 +7,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => setIsOpen(!isOpen);
   return (
-    <div className="bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[20px] w-full lg:w-[70%] md:w-[90%] flex items-center justify-between py-4 mt-4 shadow-sm shadow-[#1a1a1a]">
+    <div className="bg-gradient-to-b from-[#404040] mx-2 to-[#1A1A1A] rounded-[20px] w-full lg:w-[70%] lg:max-w-[1000px] md:w-[90%] flex items-center justify-between py-4 mt-4 shadow-sm shadow-[#1a1a1a]">
       <Link to="/" className="flex items-center">
         <img src="/logo.svg" alt="Logo" className="h-[30px] w-[30px] ml-4" />
         <h1 className="font-titles font-bold text-white text-2xl ml-2">

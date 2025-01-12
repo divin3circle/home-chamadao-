@@ -14,7 +14,7 @@ function FeatureCard({ feature }: { feature: Feature }) {
       <h1 className="font-bold font-titles text-lg group-hover:text-xl text-center mt-16 transition-all duration-500 ease-in opacity-70 group-hover:opacity-100">
         {feature.title}
       </h1>
-      <p className="font-titles text-sm leading-relaxed opacity-80 group-hover:opacity-100 my-2 p-2">
+      <p className="font-titles text-xs leading-relaxed opacity-80 group-hover:opacity-100 my-2 p-2 px-16 text-center">
         {feature.description}
       </p>
       <div className="h-[320px] md:w-[300px] w-full z-[-1] left-[-10px] top-[10px] bg-gradient-to-b to-[#7FC786] from-[#89D3DC] opacity-0 absolute rounded-lg group-hover:opacity-100 ease-in-out duration-150 transition-all"></div>

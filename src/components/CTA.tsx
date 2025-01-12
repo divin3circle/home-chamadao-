@@ -18,7 +18,7 @@ function CTA() {
           Take control of your financial future and build wealth with your
           community.
         </p>
-        <div className="h-[50px] w-2/3 lg:w-1/2 bg-white rounded-[30px] my-2 flex flex-row items-center mx-4">
+        <div className="h-[50px] w-[80%] lg:w-1/2 bg-white rounded-[30px] my-2 flex flex-row items-center mx-4">
           <div className="flex flex-row items-center">
             {users.map((user, index) => (
               <img
