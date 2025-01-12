@@ -6,7 +6,7 @@ import user4 from "../../public/user4.svg";
 function CTA() {
   const users = [user1, user2, user3, user4];
   return (
-    <div className="flex md:flex-row flex-col items-center justify-between max-w-[1040px] my-0 mx-auto rounded-3xl bg-gradient-to-r to-[#89D3DC] from-[#7FC786] mt-8">
+    <div className="flex md:flex-row flex-col items-center justify-between max-w-[1040px] my-0 mx-auto rounded-3xl bg-gradient-to-l to-[#89D3DC] from-[#7FC786] mt-8">
       <div className="px-4 my-8 flex-1 md:w-1/2 w-full">
         <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl w-72 mt-4 md:my-2 md:mt-0 font-bold">
           Join ChamaDAO
