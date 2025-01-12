@@ -87,7 +87,7 @@ function Form() {
     );
   }
   return (
-    <div className="mt-20 max-w-[1040px] my-0 mx-auto flex flex-col items-center justify-center h-screen">
+    <div className="mt-20 w-full lg:max-w-[1240px] my-0 mx-auto flex flex-col items-center justify-center">
       <h1 className="text-white font-titles w-[11.5rem] bg-[#363636] p-1 text-3xl mt-8 font-bold">
         Contact Us
       </h1>

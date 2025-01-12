@@ -7,7 +7,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => setIsOpen(!isOpen);
   return (
-    <div className="bg-gradient-to-b from-[#404040] to-[#1A1A1A] rounded-[20px] w-full lg:w-[70%] md:w-[90%] flex items-center justify-between py-4 mt-4 shadow-sm shadow-[#1a1a1a] mx-2 md:mx-0">
+    <div className="bg-gradient-to-b from-[#404040] mx-2 to-[#1A1A1A] rounded-[20px] w-full lg:w-[70%] lg:max-w-[1000px] md:w-[90%] flex items-center justify-between py-4 mt-4 shadow-sm shadow-[#1a1a1a]">
       <Link to="/" className="flex items-center">
         <img src="/logo.svg" alt="Logo" className="h-[30px] w-[30px] ml-4" />
         <h1 className="font-titles font-bold text-white text-2xl ml-2">
@@ -18,6 +18,8 @@ function Navbar() {
       </Link>
       <div className="items-center gap-2 hidden md:flex">
         <div>
+          {/* //TO-DO 
+          //Disable About tag when not in home route */}
           <a
             href="#about"
             className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
@@ -30,12 +32,12 @@ function Navbar() {
           >
             Contact Us
           </Link>
-          <button
+          <Link
+            to="/invest"
             className=" text-white font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
-            onClick={() => openModal("investModal")}
           >
             Invest
-          </button>
+          </Link>
         </div>
         <button
           className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
@@ -93,12 +95,13 @@ function Navbar() {
           >
             Contact Us
           </Link>
-          <button
+
+          <Link
             className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
-            onClick={() => openModal("investModal")}
+            to="/invest"
           >
             Invest
-          </button>
+          </Link>
         </ul>
         <div className="flex items-center justify-center my-8">
           <button

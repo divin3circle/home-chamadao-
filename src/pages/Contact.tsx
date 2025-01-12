@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import JoinModal from "../components/JoinModal";
 import InvestModal from "../components/InvestModal";
 import Form from "../components/Form";
+import FAQ from "../components/FAQ";
 
 function Contact() {
   return (
@@ -11,6 +12,7 @@ function Contact() {
         <Navbar />
       </div>
       <Form />
+      <FAQ />
       <Footer />
       <JoinModal />
       <InvestModal />

@@ -21,18 +21,17 @@ function About() {
     },
   ];
   return (
-    <div className="lg:max-w-[1040px] w-full mx-auto my-0">
+    <div className="lg:max-w-[1040px] w-full mx-auto my-0 px-2 pt-8">
       <div className="flex flex-col md:flex-row md:justify-between justify-center mt-16">
         <div className="flex justify-center items-center relative flex-1 mb-8 md:mb-0">
           <img
             src="/hero1.svg"
             alt="Hero"
-            className="h-[400px] md:w-[350px] w-full relative z-[1]"
+            className="h-[400px] md:w-[350px] w-full z-[1]"
           />
-          <div className="bg-[#FAE8B6] md:w-[350px] w-full h-[400px] absolute rounded-[24px] transform rotate-[6.9deg] top-10 left-0 bottom-0"></div>
         </div>
         <div className="flex flex-col flex-1">
-          <h1 className="text-white font-body bg-[#363636] p-1 text-4xl lg:text-5xl w-[24rem] lg:w-[500px] md:w-[400px] mt-8 md:my-2 md:mt-0 font-bold">
+          <h1 className="text-white font-body bg-[#363636] text-4xl lg:text-5xl inline-block mt-8 md:mt-0 font-bold">
             What is ChamaDAO?
           </h1>
           <p className="text-black font-titles p-1 text-sm font-light mt-2 md:mt-0">
@@ -51,6 +50,7 @@ function About() {
                 key={index}
                 className="text-black font-titles p-2 flex flex-row"
               >
+                <div className="bg-gradient-to-r from-[#89D3DC] to-[#7FC786] w-1 h-1 rounded-[50%] mb-1 p-2 mx-2"></div>
                 <p className="font-light">
                   <span className="font-bold font-titles">{item.title}: </span>
                   {item.description}

@@ -50,7 +50,7 @@ function FAQ() {
         "Loans given to chama members are based on a reputation and gurrantor basis.",
     },
     {
-      title: "Do I need to be Kenya to use ChamaDAO?",
+      title: "Do I need to be in Kenya to use ChamaDAO?",
       description:
         "No, Thanks to blockchain technology, savings groups around the globe can access the app's features.",
     },
@@ -66,11 +66,11 @@ function FAQ() {
     },
   ];
   return (
-    <div className="flex items-center justify-center flex-col mt-8n mt-12 max-w-[1040px] mx-auto my-0">
-      <h1 className="text-white font-body bg-[#363636] p-1 md:text-3xl text-xl md:w-[30rem] w-[20rem] mt-4 md:my-2 md:mt-0 font-bold text-center">
+    <div className="flex items-center justify-center flex-col mt-12 max-w-[1040px] mx-auto my-0">
+      <h1 className="text-white font-body bg-[#363636] p-1 md:text-3xl text-xl inline mt-4 md:my-2 md:mt-0 font-bold text-center">
         Frequentls Asked Questions
       </h1>
-      <div className="flex flex-col gap-2 mt-8 w-full mx-auto my-0 ease-in duration-300 transition-all border-b-[1px] border-[#B1B1B1]">
+      <div className="flex flex-col gap-2 mt-8 w-full mx-auto my-0 ease-in duration-300 transition-all border-b-[1px] border-[#B1B1B1] mb-8">
         {faqs.map((faq) => (
           <FAOCard faq={faq} />
         ))}
