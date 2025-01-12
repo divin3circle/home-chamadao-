@@ -9,8 +9,8 @@ import {
 
 function Footer() {
   return (
-    <div className="h-[300px] bg-gradient-to-b from-[#404040] to-[#1A1A1A] mt-8 pt-16 md:pt-8 ">
-      <div className="max-w-[1090px] my-0 mx-auto grid grid-cols-2 md:grid-cols-4 content-center px-2 gap-2 mt-8">
+    <div className="md:h-[300px] h-[350px] pt-12 bg-gradient-to-b from-[#404040] to-[#1A1A1A] md:pt-8 ">
+      <div className="max-w-[1090px] my-0 mx-auto grid grid-cols-2 md:grid-cols-4 content-center px-2 gap-2">
         <div className="flex flex-col">
           <div className="flex items-center">
             <img

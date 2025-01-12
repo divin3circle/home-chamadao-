@@ -93,12 +93,7 @@ function Navbar() {
           >
             Contact Us
           </Link>
-          <Link
-            to="/contact"
-            className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
-          >
-            Contact Us
-          </Link>
+
           <Link
             className="font-semibold text-lg hover:border-b-2 border-[#7FC786] transition-all cursor-pointer"
             to="/invest"
