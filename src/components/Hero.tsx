@@ -1,5 +1,12 @@
 import { openModal } from "../../utils/modalFunctions";
+import { useOverlayStore } from "../hooks/overlayStore";
 function Hero() {
+  const { toggleOverlay } = useOverlayStore();
+
+  const handleOverlayAndModal = () => {
+    openModal("joinModal");
+    toggleOverlay();
+  };
   return (
     <div className="mx-auto my-0 to-[#89D3DC] from-[#7FC786] bg-gradient-to-b md:h-[85dvh] lg:max-w-[1070px] rounded-b-[63px] flex flex-col justify-center">
       <div className="flex flex-col md:flex-row items-center md:gap-1 md:-mb-20 mt-24 md:mt-0">
@@ -32,7 +39,7 @@ function Hero() {
       <div className="flex justify-center md:justify-start items-center md:items-start mt-4">
         <button
           className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mx-8 mt-4 w-[162px] mb-4 md:mb-0"
-          onClick={() => openModal("joinModal")}
+          onClick={handleOverlayAndModal}
         >
           Download App
         </button>

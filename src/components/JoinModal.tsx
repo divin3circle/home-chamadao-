@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../utils/firebaseConfig";
 import { useState } from "react";
+import { useOverlayStore } from "../hooks/overlayStore";
 
 interface UserData {
   name: string;
@@ -19,6 +20,12 @@ function JoinModal() {
   const [loading, setLoading] = useState<boolean>(false);
   const userRef = collection(db, "early_access");
   const [terms, setTerms] = useState<boolean>(true);
+  const { toggleOverlay } = useOverlayStore();
+
+  const handleOverlayAndModal = () => {
+    closeModal("joinModal");
+    toggleOverlay();
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function handleSignUp(e: any) {
@@ -54,7 +61,6 @@ function JoinModal() {
   return (
     <>
       {/* //TO-DO //Add global state manager to control overlay state */}
-      {/* <div className="w-full absolute inset-0 bottom-0 top-0 h-[100%] bg-black/50"></div> */}
       <dialog
         id="joinModal"
         className="modal border-none rounded-2xl bg-blend-darken bg-white w-full md:w-[700px] md:h-[450px]"
@@ -71,7 +77,7 @@ function JoinModal() {
             </div>
             <img
               src="/signup.svg"
-              className="object-contain md:h-full h-3/4"
+              className="object-contain md:h-[450px]"
               alt="join"
             />
           </div>
@@ -80,7 +86,7 @@ function JoinModal() {
               <IconX
                 size={24}
                 className="absolute top-5 right-5 cursor-pointer"
-                onClick={() => closeModal("joinModal")}
+                onClick={handleOverlayAndModal}
               />
               <div className="md:mt-16 mt-12">
                 <h1 className="font-titles md:text-lg font-extrabold">

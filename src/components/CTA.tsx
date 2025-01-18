@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import user1 from "../../public/user1.svg";
 import user2 from "../../public/user2.svg";
 import user3 from "../../public/user3.png";
@@ -5,8 +6,13 @@ import user4 from "../../public/user4.svg";
 
 function CTA() {
   const users = [user1, user2, user3, user4];
+  const navigate = useNavigate();
+
+  const handleOverlayAndModal = () => {
+    navigate("/contact");
+  };
   return (
-    <div className="flex md:flex-row flex-col items-center justify-between max-w-[1040px] my-0 mx-auto rounded-3xl bg-gradient-to-l to-[#89D3DC] from-[#7FC786] mt-8">
+    <div className="pl-4 md:pl-10 flex md:flex-row flex-col items-center justify-between max-w-[1040px] my-0 mx-auto rounded-3xl bg-gradient-to-l to-[#89D3DC] from-[#7FC786] mt-8">
       <div className="px-4 my-8 flex-1 md:w-1/2 w-full">
         <h1 className="text-white font-titles bg-[#363636] p-1 text-3xl inline mt-4 md:my-2 md:mt-0 font-bold">
           Join ChamaDAO
@@ -31,11 +37,14 @@ function CTA() {
           </div>
           <p className="font-bold text-sm font-titles px-2">+10K Members</p>
         </div>
-        <button className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 mt-4">
-          Get Early Access
+        <button
+          className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4 mt-4"
+          onClick={handleOverlayAndModal}
+        >
+          Contact Us
         </button>
       </div>
-      <img src="/cta.svg" alt="Hero" className="h-full md:w-1/2 w-full" />
+      <img src="/cta.svg" alt="Hero" className="h-full md:w-1/2 w-full -mr-1" />
     </div>
   );
 }

@@ -2,10 +2,17 @@ import { IconMenuDeep, IconX } from "@tabler/icons-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { openModal } from "../../utils/modalFunctions";
+import { useOverlayStore } from "../hooks/overlayStore";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => setIsOpen(!isOpen);
+  const { toggleOverlay } = useOverlayStore();
+
+  const handleOverlayAndModal = () => {
+    openModal("joinModal");
+    toggleOverlay();
+  };
   return (
     <div className="bg-gradient-to-b from-[#404040] mx-2 to-[#1A1A1A] rounded-[20px] w-full lg:w-[70%] lg:max-w-[1000px] md:w-[90%] flex items-center justify-between py-4 mt-4 shadow-sm shadow-[#1a1a1a]">
       <Link to="/" className="flex items-center">
@@ -41,7 +48,7 @@ function Navbar() {
         </div>
         <button
           className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
-          onClick={() => openModal("joinModal")}
+          onClick={handleOverlayAndModal}
         >
           Sign Up
         </button>
@@ -106,7 +113,7 @@ function Navbar() {
         <div className="flex items-center justify-center my-8">
           <button
             className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mr-4"
-            onClick={() => openModal("joinModal")}
+            onClick={handleOverlayAndModal}
           >
             Download App
           </button>
