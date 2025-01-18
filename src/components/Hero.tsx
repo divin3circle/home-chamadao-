@@ -36,7 +36,7 @@ function Hero() {
         Join the revolution in communal financial freedom with ChamaDAO — a
         decentralized platform inspired by Kenya’s trusted chamas.
       </p>
-      <div className="flex justify-center md:justify-start items-center md:items-start mt-4">
+      <div className="flex justify-center md:justify-start items-center md:items-start mt-4 px-12">
         <button
           className="bg-[#FCE9B6] text-[#000] font-titles font-bold text-sm px-4 py-2 rounded-md mx-8 mt-4 w-[162px] mb-4 md:mb-0"
           onClick={handleOverlayAndModal}
