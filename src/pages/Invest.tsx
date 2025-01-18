@@ -66,7 +66,7 @@ function Invest() {
           </div>
           <div className="flex flex-col flex-1 px-4">
             <div className="w-full flex flex-col relative">
-              <div className="px-4">
+              <div className="">
                 <h1 className="text-white font-titles w-[11rem] bg-[#363636] p-1 text-3xl mt-8 font-bold">
                   INVEST IN
                 </h1>
