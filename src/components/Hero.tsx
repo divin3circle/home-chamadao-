@@ -8,7 +8,7 @@ function Hero() {
     toggleOverlay();
   };
   return (
-    <div className="mx-auto my-0 to-[#89D3DC] from-[#7FC786] bg-gradient-to-b md:h-[85dvh] lg:max-w-[1070px] rounded-b-[63px] flex flex-col justify-center">
+    <div className="mx-auto my-0 to-[#89D3DC] from-[#7FC786] bg-gradient-to-b md:h-[85dvh] lg:max-w-[1240px] rounded-b-[63px] flex flex-col justify-center">
       <div className="flex flex-col md:flex-row items-center md:gap-1 md:-mb-20 mt-24 md:mt-0">
         <div className="md:mx-8 lg:pt-0 mb-4 md:mb-0 md:px-12">
           <h1 className="text-white rounded font-body bg-[#363636] text-[2.8rem] md:text-5xl lg:text-6xl w-full lg:w-[500px] md:w-[400px] my-2 font-bold">
